@@ -1,5 +1,8 @@
 package tests;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AmazonLoginPage;
 import pages.AmazonPage;
@@ -14,11 +17,11 @@ public class AmazonTest {
   //  o Ana sayfanın açıldığı kontrol edilir.                              --> DONE
   //  o Çerez tercihlerinden Çerezleri kabul et seçilir.                   --> DONE
   //  o Siteye login olunur.                                               --> DONE
-  //  o Login işlemi kontrol edilir.
-  //  o Arama butonu yanındaki kategoriler tabından bilgisayar seçilir.
-  //  o Bilgisayar kategorisi seçildiği kontrol edilir.
-  //  o Arama alanına MSI yazılır ve arama yapılır.
-  //  o Arama yapıldığı kontrol edilir.
+  //  o Login işlemi kontrol edilir.                                       --> DONE
+  //  o Arama butonu yanındaki kategoriler tabından bilgisayar seçilir.    --> DONE
+  //  o Bilgisayar kategorisi seçildiği kontrol edilir.                    --> DONE
+  //  o Arama alanına MSI yazılır ve arama yapılır.                        --> DONE
+  //  o Arama yapıldığı kontrol edilir.                                    --> DONE
   //  o Arama sonuçları sayfasından 2. sayfa açılır.
   //  o 2. sayfanın açıldığı kontrol edilir.
   //  o Sayfadaki 2. ürün favorilere eklenir.
@@ -45,10 +48,31 @@ public class AmazonTest {
         ReasubleMethods.moveToElement(amazonPage.login);
         amazonPage.login.click();
         AmazonLoginPage alp = new AmazonLoginPage();
-        ReasubleMethods.sendKey("merveabd_61@hotmail.com",alp.txtEmail);
+        ReasubleMethods.sendKey(ConfigReader.getProperty("email"),alp.txtEmail);
         alp.continueButton.click();
-        ReasubleMethods.sendKey("9272462642",alp.txtPassword);
+        ReasubleMethods.sendKey(ConfigReader.getProperty("password"),alp.txtPassword);
         alp.girisButton.click();
+
+        // contain methodu eklenebilir
+        // public static void icerirMi(WebElement iceriyorMu,String aranan){
+        //     Assert.assertTrue(iceriyorMu.getText().contains(aranan));
+        // }
+        Assert.assertTrue(alp.inLogin.getText().contains("Merve"));
+
+        //  o Arama butonu yanındaki kategoriler tabından bilgisayar seçilir.
+        ReasubleMethods.dropDown(alp.category).selectByVisibleText("Bilgisayarlar");
+
+        //  o Bilgisayar kategorisi seçildiği kontrol edilir.
+        WebElement drop = ReasubleMethods.dropDown(alp.category).getFirstSelectedOption();
+        ReasubleMethods.assertAssertTrue("Bilgisayarlar",drop);
+
+        // o Arama alanına MSI yazılır ve arama yapılır.
+        ReasubleMethods.sendKey("MSI",alp.searchBox);
+        alp.searchBox.sendKeys(Keys.ENTER);
+
+        // o Arama yapıldığı kontrol edilir.
+        ReasubleMethods.assertAssertTrue("MSI",alp.search);
+
 
 
 

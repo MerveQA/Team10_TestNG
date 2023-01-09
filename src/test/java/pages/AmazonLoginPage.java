@@ -22,4 +22,16 @@ public class AmazonLoginPage {
 
     @FindBy(xpath = "//input[@class='a-button-input']")
     public WebElement girisButton;
+
+    @FindBy(xpath = "//span[@id='glow-ingress-line1']")
+    public WebElement inLogin;
+
+    @FindBy(xpath = "//select[@name='url']")
+    public WebElement category;
+
+    @FindBy(xpath = "//input[@id='twotabsearchtextbox']")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//span[@class='a-color-state a-text-bold']")
+    public WebElement search;
 }
