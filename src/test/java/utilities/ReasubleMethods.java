@@ -1,5 +1,6 @@
 package utilities;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -29,6 +30,11 @@ public class ReasubleMethods {
 
     public static void assertAssertTrue(String text, WebElement locator){
         Assert.assertTrue(locator.getText().contains(text));
+    }
+
+    public static void javaScrptExectr(WebElement locator){
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].click()" ,locator);
     }
 
 }

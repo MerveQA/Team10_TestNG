@@ -8,10 +8,10 @@ import utilities.Driver;
 public class AmazonLoginPage {
 
     public AmazonLoginPage() {
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id ="ap_email")
+    @FindBy(id = "ap_email")
     public WebElement txtEmail;
 
     @FindBy(xpath = "//input[@class='a-button-input']")
@@ -34,4 +34,20 @@ public class AmazonLoginPage {
 
     @FindBy(xpath = "//span[@class='a-color-state a-text-bold']")
     public WebElement search;
+
+    @FindBy(linkText = "2")
+    public WebElement pageTwo;
+
+    @FindBy(xpath = "//div[@data-index='2']")
+    public WebElement productTwo;
+
+    @FindBy(xpath ="//input[@id='add-to-wishlist-button-submit']")
+    public WebElement addTwoKist;
+
+    @FindBy(xpath = "//span[text()='1 ürün şuraya eklendi:']")
+    public WebElement added;
+
+    @FindBy(linkText = "Listenizi Görüntüleyin")
+    public WebElement favoriteListButton;
+
 }
