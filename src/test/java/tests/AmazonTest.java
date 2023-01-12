@@ -84,17 +84,46 @@ public class AmazonTest {
         alp.productTwo.click();
         alp.addTwoKist.click();
 
+
         //  o 2. Ürünün favorilere eklendiği kontrol edilir.
         Assert.assertTrue(alp.added.isDisplayed());
 
+
         //  o Hesabım > Favori Listem sayfasına gidilir.
 
+
         //  o “Favori Listem” sayfası açıldığı kontrol edilir.
+
+
         //  o Eklenen ürün favorilerden silinir.
         //  o Silme işleminin gerçekleştiği kontrol edilir.
         //  o Üye çıkış işlemi yapılır.
         //  o Çıkış işleminin yapıldığı kontrol edilir.
 
+   //    //2. Ürünün favorilere eklendiği kontrol edilir.
+   //    ReusableMethods.assertAssertTrue("1 ürün şuraya eklendi:", amazonPage.wishList);
+
+
+   //    //Hesabım > Favori Listem sayfasına gidilir.
+   //    amazonPage.listDisplayed.click();
+
+
+   //    //“Favori Listem” sayfası açıldığı kontrol edilir.
+   //    String homepageUrl1 = Driver.getDriver().getCurrentUrl();
+   //    Assert.assertTrue(homepageUrl1.contains("wishlist"));
+
+
+   //    //Eklenen ürün favorilerden silinir.
+   //    amazonPage.deleteButon.click();
+
+   //    //Silme işleminin gerçekleştiği kontrol edilir.
+   //    Assert.assertTrue(amazonPage.silindi.isDisplayed());
+   //    //Üye çıkış işlemi yapılır.
+   //    ReusableMethods.moveToElement(amazonPage.login);
+   //    amazonPage.exitbutton.click();
+
+   //    //Çıkış işleminin yapıldığı kontrol edilir.
+   //    Assert.assertTrue(amazonPage.girisButon.isDisplayed());
 
 
     }
