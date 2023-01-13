@@ -41,30 +41,26 @@ public class AmazonLoginPage {
     @FindBy(xpath = "//div[@data-index='2']")
     public WebElement productTwo;
 
-    @FindBy(xpath ="//input[@id='add-to-wishlist-button-submit']")
+    @FindBy(xpath = "//input[@id='add-to-wishlist-button-submit']")
     public WebElement addTwoKist;
 
     @FindBy(xpath = "//span[text()='1 ürün şuraya eklendi:']")
-    public WebElement added;
+    public WebElement wishList;
 
- //  @FindBy(linkText = "Listenizi Görüntüleyin")
- //  public WebElement favoriteListButton;
+    @FindBy(linkText = "Listenizi Görüntüleyin")
+    public WebElement favoriteListButton;
 
+    @FindBy(name = "submit.deleteItem")
+    public WebElement deleteButon;
 
+    @FindBy(xpath = "//div[text()='Silindi']")
+    public WebElement silindi;
 
+    @FindBy(xpath = "//span[text()='Çıkış Yap']")
+    public WebElement exitbutton;
 
- //  @FindBy(name = "submit.deleteItem")
- //  public WebElement deleteButon;
-
- //  @FindBy(xpath = "//div[text()='Silindi']")
- //  public WebElement silindi;
-
- //  @FindBy(xpath = "//span[text()='Çıkış Yap']")
-
- //  public WebElement exitbutton;
-
- //  @FindBy(xpath= "//h1[@class='a-spacing-small']")
- //  public WebElement girisButon;
+    //  @FindBy(xpath= "//h1[@class='a-spacing-small']")
+    //  public WebElement girisButon;
 
 
 }
